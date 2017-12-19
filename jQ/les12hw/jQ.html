@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQ HW</title>
+
+<style>
+
+  .circle1{
+    border-radius: 100%;
+    background: red;
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    float: left;
+    margin-left: 30%;
+  }
+
+  .circle2{
+    border-radius: 100%;
+    background: orange;
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    margin-left: 50%;
+    display: none;
+  }
+
+  .square {
+    width: 100px;
+    height: 100px;
+    background: red;
+  }
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+
+    $(document).ready(function() { // эта часть всегда пишется
+      $(".square").mouseenter(function() {
+        $(".square").animate({
+          height: '+=100px',
+          width: '+=100px'
+        }, 5000).fadeOut(3000);
+      });
+
+      $("#circle1").click(function() {
+        $("#circle1").hide();
+      });
+
+      $("#circle1").click(function() {
+        $("#circle2").show();
+      });
+
+      $("#circle2").click(function() {
+        $("#circle2").hide();
+      });
+
+      $("#circle2").click(function() {
+        $("#circle1").show();
+      });
+
+    }); // эта закрывающая скобка тоже
+
+</script>
+
+</head>
+
+<body>
+
+  <div class="square"></div>
+
+
+  <div class="circle1" id="circle1"></div>
+
+
+  <div class="circle2" id="circle2"></div>
+  
+</body>
+</html>
